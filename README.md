@@ -5,6 +5,8 @@ My girlfriend lives in another city and I often forget to check my phone, so I b
 
 This project can be modified in any way. The way I built this was the mosst efficient for me with stuff that I had laying around. You don't have to use a breadboard, you can include some other functionalities or make the electronics a bit safer. I'm simply providing a minimal idea here.
 
+**If you enjoyed this project and made someone happy with it consider buying me a coffee, since I am a PhD candidate and this is my main money drain: coff.ee/definetly_human**
+
 # ESP32‑S3 Nano Ping – Beginner Edition
 
 https://www.youtube.com/shorts/T2wOaKLyKXQ
