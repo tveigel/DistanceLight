@@ -38,16 +38,7 @@ For this project we will need to set up a server in the cloud that will relay me
 You can use any MQTT broker you like, but I recommend using [CloudMQTT](https://www.cloudmqtt.com/) because they have generous free tiers, which you will never hit
 with this project. Also I found it easy to set up and use.
 
-## 3 · Wiring – The Easy Way
-
-
-|  Step | Do this                                                                                                                                                                                   | Why                                                 |
-| :---: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| **A** | **Feed the rails.** Connect **5 V** on the XIAO to the breadboard’s red rail and **GND** to the blue rail.                                                                                | Power everywhere.                                   |
-| **B** | **Power the ring.** Red wire from ring +5 V to red rail, black wire from ring GND to blue rail.                                                                                           | Ring gets juice.                                    |
-| **C** | **Add capacitors.** Stick the **1000 µF** cap across red ↔ blue (long leg +), and the **100 nF** cap right next to it.                                                                    | Smoother voltage for the picky LEDs.                |
-| **D** | **Data line.** Place the **220 Ω** resistor across a spare row (e.g. A10 → E10). Yellow wire from NeoPixel DIN into that row; then a jumper from the resistor’s other end to **XIAO D7**. | Protects first LED.                                 |
-| **E** | **Button.** Bridge one button leg to the blue rail (GND) with a black wire. Put the other leg in a free row (e.g. A20) and run a green jumper from that row to **XIAO D4**.               | Internal pull‑up makes the pin go LOW when pressed. |
+## 3 · Wiring
 
 Here is an example picture on how to wire this (Please Note that the GND cable of the LED obviously needs to go into the GND row and not the one behind it like in the picture):
 ![Wiring Example](ExampleWiring.jpg)
