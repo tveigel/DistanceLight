@@ -50,7 +50,7 @@ with this project. Also I found it easy to set up and use.
 | **E** | **Button.** Bridge one button leg to the blue rail (GND) with a black wire. Put the other leg in a free row (e.g. A20) and run a green jumper from that row to **XIAO D4**.               | Internal pull‑up makes the pin go LOW when pressed. |
 
 Here is an example picture on how to wire this:
-![Wiring Example](ExampleWiring.png)
+![Wiring Example](ExampleWiring.jpg)
 
 ---
 
