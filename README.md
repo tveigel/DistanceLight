@@ -5,6 +5,8 @@ My girlfriend lives in another city and I often forget to check my phone, so I b
 
 This project can be modified in any way. The way I built this was the mosst efficient for me with stuff that I had laying around. You don't have to use a breadboard, you can include some other functionalities or make the electronics a bit safer. I'm simply providing a minimal idea here.
 
+**If you enjoyed this project and made someone happy with it, consider [buying me a coffee](coff.ee/definetly_human), since I am a PhD candidate and this is my main money drain.**
+
 # ESP32‑S3 Nano Ping – Beginner Edition
 
 https://www.youtube.com/shorts/T2wOaKLyKXQ
@@ -38,18 +40,9 @@ For this project we will need to set up a server in the cloud that will relay me
 You can use any MQTT broker you like, but I recommend using [CloudMQTT](https://www.cloudmqtt.com/) because they have generous free tiers, which you will never hit
 with this project. Also I found it easy to set up and use.
 
-## 3 · Wiring – The Easy Way
+## 3 · Wiring
 
-
-|  Step | Do this                                                                                                                                                                                   | Why                                                 |
-| :---: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| **A** | **Feed the rails.** Connect **5 V** on the XIAO to the breadboard’s red rail and **GND** to the blue rail.                                                                                | Power everywhere.                                   |
-| **B** | **Power the ring.** Red wire from ring +5 V to red rail, black wire from ring GND to blue rail.                                                                                           | Ring gets juice.                                    |
-| **C** | **Add capacitors.** Stick the **1000 µF** cap across red ↔ blue (long leg +), and the **100 nF** cap right next to it.                                                                    | Smoother voltage for the picky LEDs.                |
-| **D** | **Data line.** Place the **220 Ω** resistor across a spare row (e.g. A10 → E10). Yellow wire from NeoPixel DIN into that row; then a jumper from the resistor’s other end to **XIAO D7**. | Protects first LED.                                 |
-| **E** | **Button.** Bridge one button leg to the blue rail (GND) with a black wire. Put the other leg in a free row (e.g. A20) and run a green jumper from that row to **XIAO D4**.               | Internal pull‑up makes the pin go LOW when pressed. |
-
-Here is an example picture on how to wire this:
+Here is an example picture on how to wire this (Please Note that the GND cable of the LED obviously needs to go into the GND row and not the one behind it like in the picture):
 ![Wiring Example](ExampleWiring.jpg)
 
 ---
@@ -57,7 +50,7 @@ Here is an example picture on how to wire this:
 ### ASCII Quick‑View (plug‑and‑play map)
 
 ```text
-Breadboard (top view) – red rail at the very top, blue rail at the very bottom
+Breadboard (top view) 
 
 +5 V rail  ============================================================
 
@@ -68,7 +61,7 @@ XIAO D7 ── 220 Ω ──▶ |  DIN |  NeoPixel ring
                +5 V (red) ──▶ Ring VCC
                GND (black) ─▶ Ring GND
 
-XIAO D4 ──▶ Push‑button ──▶ GND (blue rail)    (green wire)
+XIAO D4 ──▶ Push‑button ──▶ GND   
 
 Capacitors on the rails:
   • 1000 µF electrolytic:  + → +5 V,  – → GND
@@ -77,18 +70,7 @@ Capacitors on the rails:
 GND rail  ============================================================
 ```
 
-Read it like this: **red** = power, **black** = ground, **yellow** carries LED data *through the resistor* to **D7**, and **green** is the button signal to **D4**.
-
-### Pin‑by‑Pin Reference
-
-| Function/Part          | XIAO pin    | Wire colour (suggested) | Breadboard destination                  |
-| ---------------------- | ----------- | ----------------------- | --------------------------------------- |
-| 5 V supply             | 5 V         | Red                     | Red rail & NeoPixel VCC                 |
-| Ground                 | GND         | Black                   | Blue rail, NeoPixel GND, one button leg |
-| NeoPixel DIN           | D7 (GPIO 7) | Yellow                  | Via 220 Ω resistor to NeoPixel DIN      |
-| Push‑button signal     | D4 (GPIO 4) | Green                   | Other button leg                        |
-| Bulk capacitor 1000 µF | —           | —                       | + leg → red rail, – leg → blue rail     |
-| Decoupling cap 100 nF  | —           | —                       | Across red ↔ blue rails                 |
+Read it like this:The yellow data cable carries LED data *through the resistor* to **D7**, and the button signal goes to **D4**.
 
 
 
@@ -97,7 +79,7 @@ Read it like this: **red** = power, **black** = ground, **yellow** carries LED d
 
 1. Connect your XIAO boards to your computer and open the Arduino IDE.
 2. Open the *nanoA.ino* or *nanoB.ino* sketch in the Arduino IDE, depending on which board you set up as **A** or **B**.
-3. Fill in your Wi‑Fi and MQTT (or any other Cloud Brokers) credentials in the sketch:
+3. Fill in your Wi‑Fi and MQTT (or any other Cloud Brokers) credentials and teh Root CA in the sketch:
 
    ```cpp
 
