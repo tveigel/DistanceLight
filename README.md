@@ -48,7 +48,7 @@ Here is an example picture on how to wire this (Please Note that the GND cable o
 ### ASCII Quick‑View (plug‑and‑play map)
 
 ```text
-Breadboard (top view) – red rail at the very top, blue rail at the very bottom
+Breadboard (top view) 
 
 +5 V rail  ============================================================
 
@@ -59,7 +59,7 @@ XIAO D7 ── 220 Ω ──▶ |  DIN |  NeoPixel ring
                +5 V (red) ──▶ Ring VCC
                GND (black) ─▶ Ring GND
 
-XIAO D4 ──▶ Push‑button ──▶ GND (blue rail)    (green wire)
+XIAO D4 ──▶ Push‑button ──▶ GND   
 
 Capacitors on the rails:
   • 1000 µF electrolytic:  + → +5 V,  – → GND
@@ -68,18 +68,7 @@ Capacitors on the rails:
 GND rail  ============================================================
 ```
 
-Read it like this: **red** = power, **black** = ground, **yellow** carries LED data *through the resistor* to **D7**, and **green** is the button signal to **D4**.
-
-### Pin‑by‑Pin Reference
-
-| Function/Part          | XIAO pin    | Wire colour (suggested) | Breadboard destination                  |
-| ---------------------- | ----------- | ----------------------- | --------------------------------------- |
-| 5 V supply             | 5 V         | Red                     | Red rail & NeoPixel VCC                 |
-| Ground                 | GND         | Black                   | Blue rail, NeoPixel GND, one button leg |
-| NeoPixel DIN           | D7 (GPIO 7) | Yellow                  | Via 220 Ω resistor to NeoPixel DIN      |
-| Push‑button signal     | D4 (GPIO 4) | Green                   | Other button leg                        |
-| Bulk capacitor 1000 µF | —           | —                       | + leg → red rail, – leg → blue rail     |
-| Decoupling cap 100 nF  | —           | —                       | Across red ↔ blue rails                 |
+Read it like this:The yellow data cable carries LED data *through the resistor* to **D7**, and the button signal goes to **D4**.
 
 
 
@@ -88,7 +77,7 @@ Read it like this: **red** = power, **black** = ground, **yellow** carries LED d
 
 1. Connect your XIAO boards to your computer and open the Arduino IDE.
 2. Open the *nanoA.ino* or *nanoB.ino* sketch in the Arduino IDE, depending on which board you set up as **A** or **B**.
-3. Fill in your Wi‑Fi and MQTT (or any other Cloud Brokers) credentials in the sketch:
+3. Fill in your Wi‑Fi and MQTT (or any other Cloud Brokers) credentials and teh Root CA in the sketch:
 
    ```cpp
 
