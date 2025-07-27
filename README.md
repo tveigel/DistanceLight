@@ -1,5 +1,7 @@
 # ESP32‑S3 Nano Ping – Beginner Edition
 
+https://www.youtube.com/shorts/T2wOaKLyKXQ
+
 A friendly step‑by‑step project that lets two **Seeed XIAO ESP32‑S3 Nano** boards “ping” each other over Wi‑Fi/MQTT and answer with colourful LED effects. Press the button on unit A → unit B glows, and vice‑versa.
 
 ---
