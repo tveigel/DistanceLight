@@ -1,4 +1,13 @@
+I will make this guide cleaner and more comprehensive in the next weeks, I just wanted to share the project.
+
+# Background
+My girlfriend lives in another city and I often forget to check my phone, so I built this light which she can press at anytime. This will light up on my desk, reminding me of taking a break and checking my phone :-)
+
+This project can be modified in any way. The way I built this was the mosst efficient for me with stuff that I had laying around. You don't have to use a breadboard, you can include some other functionalities or make the electronics a bit safer. I'm simply providing a minimal idea here.
+
 # ESP32‑S3 Nano Ping – Beginner Edition
+
+https://www.youtube.com/shorts/T2wOaKLyKXQ
 
 A friendly step‑by‑step project that lets two **Seeed XIAO ESP32‑S3 Nano** boards “ping” each other over Wi‑Fi/MQTT and answer with colourful LED effects. Press the button on unit A → unit B glows, and vice‑versa.
 
