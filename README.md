@@ -49,6 +49,8 @@ with this project. Also I found it easy to set up and use.
 | **D** | **Data line.** Place the **220 Ω** resistor across a spare row (e.g. A10 → E10). Yellow wire from NeoPixel DIN into that row; then a jumper from the resistor’s other end to **XIAO D7**. | Protects first LED.                                 |
 | **E** | **Button.** Bridge one button leg to the blue rail (GND) with a black wire. Put the other leg in a free row (e.g. A20) and run a green jumper from that row to **XIAO D4**.               | Internal pull‑up makes the pin go LOW when pressed. |
 
+Here is an example picture on how to wire this:
+![Wiring Example](ExampleWiring.png)
 
 ---
 
